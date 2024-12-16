@@ -1,0 +1,18 @@
+type CoinStats {
+  avg_price: Float
+  max_price: Float
+  max_price_date: String
+  min_price: Float
+  min_price_date: String
+}
+
+type DailyStats {
+    date: String
+    avg_price: Float
+    max_price: Float
+    min_price: Float
+}
+type Query {
+  aboutCoin(coin_id: String!, startDate: String!, endDate: String!): CoinStats
+    aboutCoinDaily(coin_id: String, startDate: String, endDate: String): [DailyStats]
+}
